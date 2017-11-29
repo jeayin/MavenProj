@@ -1,4 +1,2 @@
-echo "Arg0: "$0 > args.txt
-echo "\nArg1: "$1 >> args.txt
-echo "\nArg2: "$2 >> args.txt
-
+echo "mvn deploy:deploy-file -DgroupId=com.jeay.app -DartifactId=$1 -Dversion=1.0.$2 -DgeneratePom=true -Dpackage=jar -Drepository=nexus -Durl=http://192.168.25.132:8081/repository/maven-releases/ -Dfile=JavaProj-1.0.$2.jar" > args.txt
+mvn deploy:deploy-file -DgroupId=com.jeay.app -DartifactId=$1 -Dversion=1.0.$2 -DgeneratePom=true -Dpackage=jar -Drepository=nexus -Durl=http://192.168.25.132:8081/repository/maven-releases/ -Dfile=JavaProj-1.0.$2.jar
