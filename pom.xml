@@ -14,11 +14,6 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <dependency><!-- add support for ssh/scp -->
-      <groupId>org.apache.maven.wagon</groupId>
-      <artifactId>wagon-ssh</artifactId>
-      <version>1.0</version>
-   </dependency>
   </dependencies>
   <properties>
     <maven.compiler.source>1.6</maven.compiler.source>
@@ -39,5 +34,22 @@
 		<url>scp://192.168.25.133/opt/lampp/htdocs/mvnsite</url>
 	</site>
 </distributionManagement>
-
+<build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.3</version>
+          <dependencies>
+            <dependency><!-- add support for ssh/scp -->
+              <groupId>org.apache.maven.wagon</groupId>
+              <artifactId>wagon-ssh</artifactId>
+              <version>1.0</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>
