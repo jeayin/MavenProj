@@ -29,10 +29,10 @@
                 <id>snapshots</id>
                 <url>http://192.168.25.132:8081/repository/maven-snapshots</url>
 	</snapshotRepository>
-	<site>
+	<!--	<site>
 		<id>192.168.25.133</id>
 		<url>scp://192.168.25.133/opt/lampp/htdocs/mvnsite</url>
-	</site>
+	</site>-->
 </distributionManagement>
 <build>
     <pluginManagement>
